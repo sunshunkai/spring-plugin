@@ -23,8 +23,9 @@ public class EnvLoadRule implements LoadRule {
     @Override
     public Map<String,Map<String, List<RulesItem>>> loadRule() {
         String rule_ = System.getenv(RULE_FILTER);
-        log.info("配置文件中的规则:{}",rule_);
-        log.info("解析忽的数据:{}", JSON.toJSONString(stringToRuleMap(rule_)));
+        if(log.isDebugEnabled()){
+            log.debug("解析忽的数据:{}", JSON.toJSONString(stringToRuleMap(rule_)));
+        }
         return stringToRuleMap(rule_);
     }
 

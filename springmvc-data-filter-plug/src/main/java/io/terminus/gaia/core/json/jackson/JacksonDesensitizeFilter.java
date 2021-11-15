@@ -1,5 +1,7 @@
 package io.terminus.gaia.core.json.jackson;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.*;
 import io.terminus.gaia.context.LogicFlowContext;
@@ -38,7 +40,8 @@ public class JacksonDesensitizeFilter extends JsonSerializer<String> {
         Map<String, List<RulesItem>> ruleListMap = rulesItem.get(logicFlow);
 
         if( ruleListMap != null && ruleListMap.containsKey(fieldName) ){
-            String writeString = DesensiStringUtils.desensiString(value, ruleListMap.get(fieldName).get(0));
+            RulesItem rulesItem = JSONObject.parseObject(JSON.toJSONString(ruleListMap.get(fieldName).get(0)), RulesItem.class);
+            String writeString = DesensiStringUtils.desensiString(value, rulesItem);
             gen.writeString(writeString);
             return;
         }

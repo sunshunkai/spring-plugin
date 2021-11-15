@@ -57,38 +57,21 @@ public class ResponseAdvice implements ResponseBodyAdvice {
         // 当前请求 logicFlow
         String logicFlow = LogicFlowContext.get();
         boolean support = logicFlowKeySet.contains(logicFlow);
-        log.info("脱敏集合:{},当前访问是否需要脱敏,{},当前请求:{}",logicFlowKeySet,support,logicFlow);
+        if(log.isDebugEnabled()){
+            log.debug("脱敏集合:{},当前访问是否需要脱敏,{},当前请求:{}",logicFlowKeySet,support,logicFlow);
+        }
         return support;
     }
 
     @Override
     public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
-
-        String logicFlow = LogicFlowContext.get();
-
-        Map<String, List<RulesItem>> rulesItem = logicFlowRuleMap.get(logicFlow);
-
         Object o = null;
-
-        /** 2 */
         try{
             o = commonDesensitizate.process(body, returnType.getParameterType());
         }catch (Exception e){
             log.error("序列化失败",e);
         }
-
-        /** 3 */
-        try{
-            String a = JSON.toJSONString(body, new FastjsonDesensitizeFilter(rulesItem), SerializerFeature.DisableCircularReferenceDetect);
-            JSON.DEFAULT_GENERATE_FEATURE |= SerializerFeature.DisableCircularReferenceDetect.getMask();
-
-            o = JSONObject.parseObject(a,returnType.getParameterType());
-
-        }catch (Exception e){
-            log.error("序列化失败1",e);
-        }
-
-        return o;
+        return o == null ? body : o;
     }
 
 }

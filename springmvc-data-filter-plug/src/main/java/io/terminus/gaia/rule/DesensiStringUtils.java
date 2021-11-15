@@ -1,9 +1,12 @@
 package io.terminus.gaia.rule;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author 孙顺凯（惊云）
  * @date 2021/11/15
  */
+@Slf4j
 public class DesensiStringUtils {
 
     /**
@@ -27,7 +30,7 @@ public class DesensiStringUtils {
         if(item.getStart()>sb.length()){
             return getFilledString('*',sb.length());
         }
-        System.out.println("start:"+(item.getStart()-1)+"end:"+(item.getEnd()-1));
+        log.info("start:"+(item.getStart()-1)+"end:"+(item.getEnd()-1));
         sb.replace(item.getStart()-1,item.getEnd()-1,getFilledString('*', Math.min(filledLength, length)));
         return sb.toString();
     }

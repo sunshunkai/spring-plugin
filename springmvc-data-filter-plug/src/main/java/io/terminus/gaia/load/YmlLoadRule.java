@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class YmlLoadRule implements LoadRule{
 
-    @Autowired
+    @Autowired(required = false)
     private RuleConfig ruleConfig;
 
     @Override

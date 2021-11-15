@@ -34,7 +34,9 @@ public class DataFilterInterceptor implements HandlerInterceptor {
 
     private String getLogicFlow(String uri){
         String logicFlow = uri.substring(uri.lastIndexOf("_") + 1);
-        log.info("当前访问逻辑流:{}",logicFlow);
+        if(log.isDebugEnabled()){
+            log.debug("当前访问逻辑流:{}",logicFlow);
+        }
         return logicFlow;
     }
 
