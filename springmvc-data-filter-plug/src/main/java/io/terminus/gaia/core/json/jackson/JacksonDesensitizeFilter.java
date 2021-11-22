@@ -40,9 +40,9 @@ public class JacksonDesensitizeFilter extends JsonSerializer<String> {
         Map<String, List<RulesItem>> ruleListMap = rulesItem.get(logicFlow);
 
         if( ruleListMap != null && ruleListMap.containsKey(fieldName) ){
-            RulesItem rulesItem = JSONObject.parseObject(JSON.toJSONString(ruleListMap.get(fieldName).get(0)), RulesItem.class);
-            String writeString = DesensiStringUtils.desensiString(value, rulesItem);
-            gen.writeString(writeString);
+//            RulesItem rulesItem = JSONObject.parseObject(JSON.toJSONString(ruleListMap.get(fieldName).get(0)), RulesItem.class);
+//            String writeString = DesensiStringUtils.desensiString(value, rulesItem);
+            gen.writeString("*******");
             return;
         }
         gen.writeString(value);

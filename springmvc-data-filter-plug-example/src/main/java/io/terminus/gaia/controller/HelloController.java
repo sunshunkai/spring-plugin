@@ -2,6 +2,9 @@ package io.terminus.gaia.controller;
 
 import io.terminus.gaia.bean.Book;
 import io.terminus.gaia.bean.User;
+import io.terminus.gaia.configuration.MyWebMvcConfigurer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +17,9 @@ import java.util.List;
  */
 @RestController
 public class HelloController {
+
+    @Autowired
+    private MyWebMvcConfigurer myWebMvcConfigurer;
 
     @RequestMapping("hello")
     public User hello(){
@@ -42,6 +48,7 @@ public class HelloController {
         user.setBookList(bookList);
 
 //        int i = 1/0;
+        myWebMvcConfigurer.getFilerUrl();
 
         return user;
     }

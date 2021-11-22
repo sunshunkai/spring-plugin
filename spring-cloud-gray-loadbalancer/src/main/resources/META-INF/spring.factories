@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  io.terminus.gaia.cloud.loadbalancer.configuration.GrayConfiguration

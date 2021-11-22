@@ -56,11 +56,7 @@ public class ResponseAdvice implements ResponseBodyAdvice {
     public boolean supports(MethodParameter returnType, Class converterType) {
         // 当前请求 logicFlow
         String logicFlow = LogicFlowContext.get();
-        boolean support = logicFlowKeySet.contains(logicFlow);
-        if(log.isDebugEnabled()){
-            log.debug("脱敏集合:{},当前访问是否需要脱敏,{},当前请求:{}",logicFlowKeySet,support,logicFlow);
-        }
-        return support;
+        return logicFlowKeySet.contains(logicFlow);
     }
 
     @Override
