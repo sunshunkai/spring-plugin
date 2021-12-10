@@ -9,6 +9,7 @@
         <module>springmvc-data-filter-plugin-example</module>
         <module>spring-cloud-gray-loadbalancer</module>
         <module>dubbo-plugin</module>
+        <module>mq</module>
     </modules>
 
     <parent>
