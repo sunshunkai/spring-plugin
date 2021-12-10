@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>springmvc-data-filter-plug</module>
-        <module>springmvc-data-filter-plug-example</module>
+        <module>springmvc-data-filter-plugin</module>
+        <module>springmvc-data-filter-plugin-example</module>
         <module>spring-cloud-gray-loadbalancer</module>
     </modules>
 
