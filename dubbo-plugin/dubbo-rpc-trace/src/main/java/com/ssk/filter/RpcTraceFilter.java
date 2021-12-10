@@ -2,12 +2,11 @@ package com.ssk.filter;
 
 import com.alibaba.dubbo.common.Constants;
 import com.ssk.constant.RpcTraceConstant;
+import com.ssk.spi.GenerateTrace;
 import org.apache.dubbo.common.extension.Activate;
 import org.apache.dubbo.common.utils.StringUtils;
 import org.apache.dubbo.rpc.*;
 import org.slf4j.MDC;
-
-import java.util.UUID;
 
 /**
  * @author 惊云
@@ -15,6 +14,8 @@ import java.util.UUID;
  */
 @Activate(group = {Constants.PROVIDER,Constants.CONSUMER},order = 1)
 public class RpcTraceFilter implements Filter {
+
+    private GenerateTrace generateTrace;
 
     /**
      *
@@ -27,7 +28,7 @@ public class RpcTraceFilter implements Filter {
     public Result invoke(Invoker<?> invoker, Invocation invocation) throws RpcException {
         String traceId = RpcContext.getContext().getAttachment("trace_id");
         if (StringUtils.isBlank(traceId)) {
-            traceId = this.generateTraceId() ;
+            traceId = generateTrace.generateTraceId() ;
         }
 
         //设置日志traceId变量
@@ -42,9 +43,4 @@ public class RpcTraceFilter implements Filter {
         }
     }
 
-    public String generateTraceId(){
-        String traceId = UUID.randomUUID().toString();
-        //替换-字符
-        return traceId.replaceAll("-", "");
-    }
 }
