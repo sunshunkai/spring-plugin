@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  io.terminus.gaia.configuration.RuleConfiguration
+  com.ssk.configuration.RuleConfiguration
