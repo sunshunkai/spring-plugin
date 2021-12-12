@@ -10,6 +10,7 @@
         <module>spring-cloud-gray-loadbalancer</module>
         <module>dubbo-plugin</module>
         <module>mq</module>
+        <module>db</module>
     </modules>
 
     <parent>
