@@ -27,13 +27,13 @@ import java.util.Map;
 @Configuration
 @EnableConfigurationProperties(BinlogBootConfig.class)
 @ConditionalOnClass(BinlogTransferStarter.class)
-@ConditionalOnProperty(prefix = "binlogportal", value = "enable", havingValue = "true")
+@ConditionalOnProperty(prefix = "binlog", value = "enable", havingValue = "true")
 public class BinlogAutoConfiguration {
-    @Autowired
-    BinlogBootConfig binlogPortalBootConfig;
 
     @Autowired
-    ApplicationContext applicationContext;
+    private BinlogBootConfig binlogPortalBootConfig;
+    @Autowired
+    private ApplicationContext applicationContext;
 
     @Bean
     @ConditionalOnMissingBean(BinlogTransferStarter.class)
@@ -55,14 +55,14 @@ public class BinlogAutoConfiguration {
         //dbconfig list
         for (Map.Entry<String, DbConfig> entry : binlogPortalBootConfig.getDbConfig().entrySet()) {
             String key = entry.getKey();
-            DbConfig val = entry.getValue();
+            DbConfig dbConfig = entry.getValue();
             SyncConfig syncConfig = new SyncConfig();
-            syncConfig.setHost(val.getHost());
-            syncConfig.setPort(val.getPort());
-            syncConfig.setUserName(val.getUserName());
-            syncConfig.setPassword(val.getPassword());
-            if (val.getHandlerList() != null) {
-                val.getHandlerList().forEach(eventHandler -> {
+            syncConfig.setHost(dbConfig.getHost());
+            syncConfig.setPort(dbConfig.getPort());
+            syncConfig.setUserName(dbConfig.getUserName());
+            syncConfig.setPassword(dbConfig.getPassword());
+            if (dbConfig.getHandlerList() != null) {
+                dbConfig.getHandlerList().forEach(eventHandler -> {
                     syncConfig.addEventHandlerList(eventHandlerList.get(eventHandler));
                 });
             }

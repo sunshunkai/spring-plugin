@@ -4,6 +4,7 @@ import com.ssk.binlog.BinlogException;
 import com.ssk.binlog.config.SyncConfig;
 
 /**
+ * 处理 binlog 位点信息
  * @author 惊云
  * @date 2021/12/12 10:45
  */
