@@ -1,0 +1,7 @@
+{
+  "name": "gray.grayHeader",
+  "type": "java.lang.Boolean",
+  "description": "Gray Header",
+  "sourceType": "com.ssk.cloud.loadbalancer.configuration.GrayConfiguration",
+  "defaultValue": false
+}

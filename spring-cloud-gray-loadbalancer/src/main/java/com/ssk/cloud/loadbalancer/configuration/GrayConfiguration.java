@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan("com.ssk")
-@ConfigurationProperties(prefix = "h3c")
+@ConfigurationProperties(prefix = "gray")
 @Data
 public class GrayConfiguration {
 

@@ -30,6 +30,12 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- 配置文件绑定，方便开发者：spring-configuration-metadata.json -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>io.terminus.platform</groupId>
             <artifactId>autumn-sdk-spring-cloud</artifactId>
