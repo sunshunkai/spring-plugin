@@ -1,7 +1,7 @@
 package com.ssk.filter;
 
 import com.alibaba.dubbo.common.Constants;
-import com.ssk.constant.RpcTraceConstant;
+import com.ssk.common.RpcTraceConstant;
 import com.ssk.spi.GenerateTrace;
 import org.apache.dubbo.common.extension.Activate;
 import org.apache.dubbo.common.utils.StringUtils;

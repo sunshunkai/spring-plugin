@@ -1,4 +1,4 @@
-package com.ssk.constant;
+package com.ssk.common;
 
 /**
  * @author 惊云
