@@ -1,7 +1,6 @@
 package com.ssk.cloud.loadbalancer.interceptor;
 
 import com.ssk.cloud.loadbalancer.context.HttpHeaderContext;
-import io.terminus.trantorframework.globalreq.context.GlobalReqContext;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
@@ -36,15 +35,15 @@ public class GrayRequestInterceptor implements HandlerInterceptor {
     }
 
     private String getGrayHeader(){
-
-        String publishHeader = GlobalReqContext.getData("publish-header", String.class);
-
-        if( Objects.isNull(publishHeader) ){
+        //TODO 放到上下文中
+       // String publishHeader = GlobalReqContext.getData("publish-header", String.class);
+        String publishHeader = "";
+        if(Objects.isNull(publishHeader)){
             RequestAttributes requestAttributes = RequestContextHolder.currentRequestAttributes();
             HttpServletRequest request = ((ServletRequestAttributes)requestAttributes).getRequest();
             publishHeader =  request.getHeader("publish-header");
             // 如果是 Trantor 发起的RPC,则只能从 Trantor 获取 Header
-            GlobalReqContext.addData("publish-header",publishHeader);
+            //GlobalReqContext.addData("publish-header",publishHeader);
         }
         return publishHeader;
     }

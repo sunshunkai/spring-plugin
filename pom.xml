@@ -11,6 +11,7 @@
         <module>dubbo-plugin</module>
         <module>mq</module>
         <module>db</module>
+        <module>file</module>
     </modules>
 
     <parent>
@@ -25,13 +26,15 @@
 
     <properties>
         <spring-cloud.version>2020.0.0</spring-cloud.version>
+        <dubbo-version>2.7.14</dubbo-version>
+        <fastjson-version>1.2.75</fastjson-version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.75</version>
+            <version>${fastjson-version}</version>
         </dependency>
 
         <dependency>
@@ -56,23 +59,18 @@
                 <scope>import</scope>
             </dependency>
 
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo-version}</version>
+            </dependency>
+
         </dependencies>
 
     </dependencyManagement>
 
 
-    <distributionManagement>
-        <repository>
-            <id>terminus</id>
-            <name>terminus release repository</name>
-            <url>https://repo.terminus.io/repository/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>terminus</id>
-            <name>terminus snapshot repository</name>
-            <url>https://repo.terminus.io/repository/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+
 
 
 </project>
