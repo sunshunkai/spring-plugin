@@ -11,6 +11,7 @@
         <module>dubbo-plugin</module>
         <module>mq</module>
         <module>db</module>
+        <module>jvm</module>
     </modules>
 
     <parent>
