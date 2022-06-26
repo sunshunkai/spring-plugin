@@ -2,7 +2,6 @@ package com.ssk.cloud.loadbalancer.configuration;
 
 import com.ssk.cloud.loadbalancer.interceptor.GrayRequestInterceptor;
 import com.ssk.cloud.loadbalancer.core.GrayServiceInstanceListSupplier;
-import io.terminus.platform.sdk.spring.cloud.loadbalance.TransactionalLoadBalancer;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,9 +62,6 @@ public class GrayCustomLoadBalancerConfiguration implements ApplicationContextAw
                 serviceInstanceListSupplier
         );
 
-        if ("true".equalsIgnoreCase(isSpringCloudEnabled)) {
-            return new TransactionalLoadBalancer(provider, name);
-        }
         return new RandomLoadBalancer(provider, name);
     }
 

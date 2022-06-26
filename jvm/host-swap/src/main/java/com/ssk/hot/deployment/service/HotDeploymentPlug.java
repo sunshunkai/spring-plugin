@@ -13,7 +13,6 @@ import java.util.Map;
  * @author 惊云
  * @date 2021/12/18 20:05
  */
-@Slf4j
 public class HotDeploymentPlug {
     private String path = "D:\\mayikt\\mayikt-jvm";
     private Map<String, ClassFileEntity> classFiles = new HashMap<>();

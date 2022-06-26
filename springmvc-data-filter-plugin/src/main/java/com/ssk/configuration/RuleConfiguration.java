@@ -1,7 +1,7 @@
 package com.ssk.configuration;
 
 
-import com.ssk.core.json.jackson.JacksonDesensitizate;
+import com.ssk.core.json.fastjson.FastjsonDesensitizate;
 import com.ssk.interceptor.DataFilterInterceptor;
 import com.ssk.load.EnvLoadRule;
 import com.ssk.load.LoadRule;
@@ -19,7 +19,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @date 2021/11/14
  */
 @Configuration
-@ComponentScan("io.terminus.gaia")
+@ComponentScan()
 public class RuleConfiguration implements WebMvcConfigurer {
 
     private static final String FLOW = "/api/trantor/flow";
@@ -37,7 +37,7 @@ public class RuleConfiguration implements WebMvcConfigurer {
     @Bean
     @ConditionalOnMissingBean
     public CommonDesensitizate commonDesensitizate(){
-        return new JacksonDesensitizate(loadRule().loadRule());
+        return new FastjsonDesensitizate(loadRule().loadRule());
     }
 
 

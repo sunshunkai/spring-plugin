@@ -36,19 +36,6 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>io.terminus.platform</groupId>
-            <artifactId>autumn-sdk-spring-cloud</artifactId>
-            <version>6.0.0.5.RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>io.terminus.trantor</groupId>
-            <artifactId>global-req</artifactId>
-            <version>0.17.6.RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
 
     </dependencies>
 

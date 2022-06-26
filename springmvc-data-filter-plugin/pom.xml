@@ -32,12 +32,6 @@
             <version>2.9.5</version>
         </dependency>
 
-        <dependency>
-            <groupId>io.terminus.trantor</groupId>
-            <artifactId>json-jackson</artifactId>
-            <version>0.18.11.RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
 
 
     </dependencies>

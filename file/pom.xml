@@ -9,12 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dubbo-plugin</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>dubbo-rpc-trace</module>
-        <module>dubbo-gray-plugin</module>
-    </modules>
+    <artifactId>file</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

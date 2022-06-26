@@ -5,6 +5,9 @@
 #### dubbo-rpc-trace
 Dubbo分布式日志输出插件
 
+#### dubbo-gray-plugin
+Dubbo 灰度发布插件
+
 
 ## spring-cloud-gray-loadbalancer
 基于SpringCloud负载均衡实现灰度发布
