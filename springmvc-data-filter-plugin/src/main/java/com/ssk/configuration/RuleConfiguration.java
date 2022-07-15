@@ -1,11 +1,11 @@
 package com.ssk.configuration;
 
 
-import com.ssk.core.json.fastjson.FastjsonDesensitizate;
+import com.ssk.service.json.fastjson.FastjsonDesensitizate;
 import com.ssk.interceptor.DataFilterInterceptor;
 import com.ssk.load.EnvLoadRule;
 import com.ssk.load.LoadRule;
-import com.ssk.core.json.CommonDesensitizate;
+import com.ssk.service.json.CommonDesensitizate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;

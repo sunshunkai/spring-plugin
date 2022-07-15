@@ -1,4 +1,4 @@
-package com.ssk.core.json.jackson;
+package com.ssk.service.json.jackson;
 
 import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.core.SerializableString;

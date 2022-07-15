@@ -1,4 +1,4 @@
-package com.ssk.core.json.fastjson;
+package com.ssk.service.json.fastjson;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;

@@ -1,4 +1,4 @@
-package com.ssk.core.json.custome;
+package com.ssk.service.json.custome;
 
 import com.alibaba.fastjson.JSONObject;
 import lombok.Data;

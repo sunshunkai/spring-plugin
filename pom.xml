@@ -13,6 +13,8 @@
         <module>db</module>
         <module>jvm</module>
         <module>file</module>
+        <module>job</module>
+        <module>job/sync-task</module>
     </modules>
 
     <parent>

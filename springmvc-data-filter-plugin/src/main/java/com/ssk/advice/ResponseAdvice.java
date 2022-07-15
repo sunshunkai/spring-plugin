@@ -3,7 +3,7 @@ package com.ssk.advice;
 import com.ssk.load.LoadRule;
 import com.ssk.rule.RulesItem;
 import com.ssk.context.LogicFlowContext;
-import com.ssk.core.json.CommonDesensitizate;
+import com.ssk.service.json.CommonDesensitizate;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;

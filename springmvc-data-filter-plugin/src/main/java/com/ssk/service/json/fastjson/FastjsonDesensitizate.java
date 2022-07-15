@@ -1,9 +1,9 @@
-package com.ssk.core.json.fastjson;
+package com.ssk.service.json.fastjson;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.ssk.core.json.CommonDesensitizate;
+import com.ssk.service.json.CommonDesensitizate;
 import com.ssk.rule.RulesItem;
 
 import java.util.List;

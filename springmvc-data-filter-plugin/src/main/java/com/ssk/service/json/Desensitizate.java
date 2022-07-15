@@ -1,4 +1,4 @@
-package com.ssk.core.json;
+package com.ssk.service.json;
 
 
 /**
