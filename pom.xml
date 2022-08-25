@@ -11,7 +11,10 @@
         <module>dubbo-plugin</module>
         <module>mq</module>
         <module>db</module>
+        <module>file</module>
     </modules>
+
+
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -33,6 +36,8 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.75</version>
         </dependency>
+
+        
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -61,18 +66,7 @@
     </dependencyManagement>
 
 
-    <distributionManagement>
-        <repository>
-            <id>terminus</id>
-            <name>terminus release repository</name>
-            <url>https://repo.terminus.io/repository/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>terminus</id>
-            <name>terminus snapshot repository</name>
-            <url>https://repo.terminus.io/repository/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+
 
 
 </project>
