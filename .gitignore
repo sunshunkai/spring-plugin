@@ -32,3 +32,4 @@ docs
 pom.xml.versionsBackup
 trantor-module-io.terminus.trantor.metadata.json
 tempDeploymentDir/
+./.cursor
