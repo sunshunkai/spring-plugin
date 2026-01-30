@@ -17,6 +17,8 @@
         <module>job/sync-task</module>
         <module>spring</module>
         <module>spring/spring-config</module>
+        <module>ai</module>
+        <module>ai/spring-ai-quick</module>
     </modules>
 
     <parent>
